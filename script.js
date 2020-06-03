@@ -1,3 +1,4 @@
+
 window.onscroll=function(){
 	const docScrollTop=document.documentElement.scrollTop;
 	if (window.innerWidth>991) {
@@ -22,3 +23,9 @@ a.forEach(function(element){
 		this.classList.add("active")
 	})
 })
+
+$('.main-carousel').flickity({
+	cellAlign: 'left', 
+	wrapAround: true,
+	freeScroll: true
+});
