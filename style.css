@@ -63,6 +63,7 @@ header.fixed{
 	position: fixed;
 	border-color: #eeeeee;
 	animation: fixHeader .5s ease;
+	z-index: 11;
 }
 
 @keyframes fixHeader{
@@ -83,11 +84,16 @@ header .brand-name a{
 	font-weight: 600;
 	color: black;
 	position: relative;
+	display: none;
 }
 header.fixed .brand-name a{
 	color: black;
+	display: block;
 }
-
+header.fix .brand-name a{
+	color: black;
+	display: block;
+}
 header .navbar ul{
 	list-style: none;
 	padding: 0;
@@ -139,8 +145,8 @@ header .navbar ul li a.active::before{
   background-image: url('images/pic.jpg');
 
   /* Full height */
-  height: 100%; 
-
+	max-width: 100%;  
+  height: auto; 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
@@ -321,7 +327,7 @@ about-me .about-content .text p{
 
 .services{
 	background-color: #f5f8fd;
-	padding: 100px 0px;  
+	padding: 100px 15px 70px;  
 }
 .services .section-title h1:before{
 	left: 30%;
@@ -429,6 +435,13 @@ footer .logo{
 	color: #ffffff;
 	font-weight: 900;
 }
+footer .logo a{
+	text-decoration: none;
+	color: #ffffff;
+}
+footer .logo a:hover {
+  font-size: 50px; 
+}
 footer .social{
 	flex: 0 0 100%;
 	max-width: 100%;
@@ -508,7 +521,7 @@ footer .social a:hover{
   color: white;
 }
 .carousel-cell-image {
-  display: inline-block;
+  display: block;
   max-height: 100%;
   margin: 0 auto;
   max-width: 100%;
@@ -516,8 +529,169 @@ footer .social a:hover{
           transition: opacity 0.4s;
 }
 
-.zoom:hover {
-  -ms-transform: scale(1.5); 
-  -webkit-transform: scale(1.5); 
-  transform: scale(1.5); 
+
+
+.shake img:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+/*.cer-container {
+  position: relative;
+  font-family: Arial;
+}
+.text-block {
+  position: absolute;
+  bottom: 150px;
+  right: 100px;
+  background-color: black;
+  color: white;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 100;
+  padding-bottom: 100px;
+  text-align: center;
+
+}*/
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  padding: 10px 10px 10px 10px; 
+  border-style: double;
+}
+.cer-container {
+  position: relative;
+  text-align: center;
+  color: black;
+}
+
+.ham-burger .fa{
+	font-size: 20px;
+	height: 30px;
+	width: 35px;
+	background-color: #ffffff;
+	color: #000000;
+	border-radius: 3px;
+	line-height: 30px;
+	text-align: center;
+	cursor: pointer;
+	display: none;
+	border: 1px solid #eeeeee;
+	/*padding-right: 50px;*/
+}
+
+@media (max-width: 991px){
+	.home .home-content .block h1{
+		font-size: 50px;
+	}
+}
+
+@media (max-width: 767px){
+	.home .home-content .block h1{
+		font-size: 40px;
+	}
+	.home .home-content .block h3{
+		font-size: 25px;
+	}
+	header{
+		padding: 15px;
+		position: fixed;
+		background-color: #ffffff;
+		border:none;
+		border-bottom: 1px solid #eeeeee;
+	}
+	header .brand-name a{
+		color: #000000;
+	}
+	.ham-burger .fa{
+		display: inline-block;
+	}
+	.navbar{
+		position: absolute;
+		background-color: #ffffff;
+		width: 100%;
+		left: 0px;
+		top: 50px;
+		padding: 15px;
+		border-top: 1px solid #eeeeee;
+		display: none;
+		border-bottom: 1px solid #eeeeee;
+	}
+	.navbar.show{
+		display: block;
+	}
+	header .brand-name a{
+	display: block;
+	}
+	
+	header .navbar ul li{
+		display: block;
+		margin-left: 0;
+
+	}
+	header .navbar ul li a{
+		line-height: 42px;
+		color: #000000;
+	}
+	header .navbar ul li a::before{
+		background-color: #febd01;
+	}
+
+	.about-me .about-content .text{
+		flex:0 0 100%;
+		max-width: 100%;
+		padding-left: 0px;
+		padding-top: 30px;
+	}
+	.about-me .about-content .img{
+		flex: 0 0 100%;
+		max-width: 100%
+	}
+}
+@media (max-width: 500px){
+	.home .home-content .block h1{
+		font-size: 30px;
+	}
+	.home .home-content .block h3{
+		font-size: 20px;
+	}
+.home .home-content .block{
+	padding-left: 20px;
+}
+.about-me .about-content .text .info .list p{
+	flex: 0 0 100%;
+}
+.carousel-cell {
+  width: 80%;
+    height: 300px;
+  }
+  footer .logo{
+  	font-size: 25px;
+  }
+  footer .logo a:hover {
+  font-size: 28px; 
+}
+.home {
+background-image: url("images/pc (2).jpg");
+}
+.home .home-content .block{
+	margin-top: 0px;
+}
+
 }

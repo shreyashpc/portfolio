@@ -9,7 +9,15 @@ window.onscroll=function(){
 			document.querySelector("header").classList.remove("fixed")
 		}
 	}
-}
+	else{
+		if(docScrollTop>260){
+			document.querySelector("header").classList.add("fix")
+		}
+		else{
+			document.querySelector("header").classList.remove("fix")
+		}
+	}
+	}
 
 // navbar links
 
@@ -21,11 +29,19 @@ a.forEach(function(element){
 			a[i].classList.remove("active");
 		}
 		this.classList.add("active")
+	document.querySelector(".navbar").classList.toggle("show");		
 	})
 })
 
-$('.main-carousel').flickity({
-	cellAlign: 'left', 
-	wrapAround: true,
-	freeScroll: true
-});
+
+//Ham-burger
+const hamBurger=document.querySelector(".ham-burger");
+hamBurger.addEventListener("click",function(){
+	document.querySelector(".navbar").classList.toggle("show");
+})
+
+// $('.main-carousel').flickity({
+// 	cellAlign: 'left', 
+// 	wrapAround: true,
+// 	freeScroll: true
+// });
