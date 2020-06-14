@@ -45,3 +45,5 @@ hamBurger.addEventListener("click",function(){
 // 	wrapAround: true,
 // 	freeScroll: true
 // });
+
+//Time line

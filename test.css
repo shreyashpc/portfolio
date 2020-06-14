@@ -9,6 +9,8 @@
   bottom: 0px;
 }*/
 
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
 #header {
   color: black;
   text-align: left;
@@ -52,7 +54,17 @@ body {
 .sidenav a:hover {
   color: #f1f1f1;
 }
-
+.sidenav i{
+  font-size: 40px;
+  font-stretch: ultra-expanded;
+  font-weight: 20px;
+  border: 1px solid white;
+  border-radius: 100px;
+  padding: 5px;
+}
+.sidenav i:hover{
+  transition: all .05s ease;
+}
 .main {
   margin-left: 160px; /* Same as the width of the sidenav */
   font-size: 28px; /* Increased text to enable scrolling */
