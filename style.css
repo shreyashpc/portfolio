@@ -55,7 +55,7 @@ header{
 	right: 0px;
 	/*border-bottom: 1px solid #423940;*/
 	padding: 0px 15px;
-	z-index: 10;
+	z-index: 2;
 	top: 0px;
 }
 header.fixed{
@@ -63,7 +63,7 @@ header.fixed{
 	position: fixed;
 	border-color: #eeeeee;
 	animation: fixHeader .5s ease;
-	z-index: 11;
+	z-index: 2;
 }
 
 @keyframes fixHeader{
@@ -620,7 +620,7 @@ footer .social a:hover{
 		color: #000000;
 	}
 	.ham-burger .fa{
-		display: inline-block;
+		display: block;
 	}
 	.navbar{
 		position: absolute;
@@ -699,7 +699,7 @@ background-image: url("images/pc (2).jpg");
 /*TiemLine*/
 .sub{
 	display: inline-block;
-	margin: 0 0 10px 30px;
+	margin: 0 0 10px;
 	position: relative;
 	text-decoration-line: underline;
 	text-decoration-color: #febd01;

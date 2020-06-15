@@ -46,4 +46,4 @@ hamBurger.addEventListener("click",function(){
 // 	freeScroll: true
 // });
 
-//Time line
+//Time line  

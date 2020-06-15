@@ -33,7 +33,7 @@ body {
 
 .sidenav {
   height: 100%;
-  width: 160px;
+  width: 180px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -42,35 +42,46 @@ body {
   overflow-x: hidden;
   padding-top: 20px;
 }
-
-.sidenav a {
-  padding: 6px 8px 6px 16px;
+@media screen and (max-width: 600px) {
+  .sidenav{
+    display: none;
+  }
+} 
+.sidenav ul{
+  padding: 10px;
+}
+.sidenav ul li {
+  padding: 6px 8px 6px 0px;
   text-decoration: none;
   font-size: 25px;
   color: #818181;
   display: block;
+  word-wrap: normal;
+  cursor: pointer;
 }
-
-.sidenav a:hover {
+.sidenav ul li:hover {
   color: #f1f1f1;
 }
+
 .sidenav i{
+  color: white;
   font-size: 40px;
   font-stretch: ultra-expanded;
   font-weight: 20px;
-  border: 1px solid white;
-  border-radius: 100px;
-  padding: 5px;
 }
 .sidenav i:hover{
   transition: all .05s ease;
 }
 .main {
-  margin-left: 160px; /* Same as the width of the sidenav */
+  margin-left: 180px; /* Same as the width of the sidenav */
   font-size: 28px; /* Increased text to enable scrolling */
   padding: 0px 10px;
 }
-
+@media screen and (max-width: 600px) {
+  .main{
+    margin-left: 0px;
+  }
+}
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
@@ -93,6 +104,10 @@ body {
 }
 
 /* Remove extra left and right margins, due to padding */
+.row {
+  margin: 0 -5px;
+  z-index: -1;
+}
 .row {
   margin: 0 -5px;
   z-index: -1;
@@ -187,4 +202,30 @@ body {
   max-width: 100%;
   height: auto;
   display: block;
+}
+.scrollmenu{
+  display: none;
+}
+@media screen and (max-width: 600px) {
+    div.scrollmenu {
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
+    display: block;
+      position: fixed;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  div.scrollmenu ul li {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+
+  div.scrollmenu li:hover {
+    background-color: #777;
+  }
 }
